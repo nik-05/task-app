@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:note_app/repository/repository.dart';
 
 class ViewNote extends StatelessWidget {
   final String title;
@@ -18,7 +19,10 @@ class ViewNote extends StatelessWidget {
         ),
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Repository().deleteNote(title: title);
+              Navigator.pop(context);
+            },
             icon: const Icon(Icons.delete),
           ),
         ],

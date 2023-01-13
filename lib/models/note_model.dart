@@ -7,14 +7,13 @@ class Note {
     required this.title,
     required this.description,
     required this.isTrashed,
-});
+  });
 
-  factory Note.fromJson(Map<String, dynamic> json) {
+  factory Note.fromMap(Map<String, dynamic> map) {
     return Note(
-      title: json['title'],
-      description: json['description'],
-      isTrashed: json['isTrashed'],
+      title: map['title'],
+      description: map['description'],
+      isTrashed: map['isTrashed'],
     );
   }
-
 }

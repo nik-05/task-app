@@ -54,7 +54,11 @@ class _HomeScreenState extends State<HomeScreen> {
                               description: data[index].description,
                             ),
                           ),
-                        );
+                        ).then((value) {
+                          setState(() {
+                            BlocProvider.of<NoteBloc>(context).add(GetData());
+                          });
+                        });
                       },
                       title: Text(
                         data[index].title,
